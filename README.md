@@ -2,10 +2,6 @@
 
 ## Introduction
 
-
-
-
-
 Decision Trees are versatile machine learning algorithms capable of handling both classification and regression tasks. They are particularly powerful, as they can fit complex datasets while maintaining interpretability.
 
 Additionally, Decision Trees form the building blocks of ensemble methods such as Random Forests and gradient-boosting algorithms like XGBoost, which rank among the most effective machine learning techniques available today.
@@ -28,12 +24,13 @@ where $I$ is an indicator function that equals 1 if the condition is true and 0 
 One of the key advantages of recursive binary trees lies in their interpretability, making them a popular choice for exploratory data analysis and real-world applications.
 
 ## Regression Trees
-
+TBC
 
 ## Classification Trees
-
+TBC
 
 ## Other Issues
+TBC
 
 ## Application
 
