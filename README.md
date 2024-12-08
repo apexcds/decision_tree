@@ -36,3 +36,5 @@ One of the key advantages of recursive binary trees lies in their interpretabili
 ## Other Issues
 
 ## Application
+
+Decision Trees are powerful tools for both regression and classification tasks. In regression, they partition the feature space into regions and assign constant values, effectively capturing non-linear relationships. For classification, they split the feature space using criteria like Gini impurity or entropy, making them intuitive and interpretable. To see practical examples of using Decision Trees for both tasks, refer to this notebook: [**Decision Trees Example Notebook**](https://github.com/apexcds/decision_tree/blob/main/Decision%20Trees.ipynb).
