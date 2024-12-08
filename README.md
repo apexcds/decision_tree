@@ -19,9 +19,9 @@ Let’s illustrate the concept using a regression problem with a continuous resp
 
 The resulting regression model predicts $Y$ as a constant $c_m$ within each region $R_m$, expressed mathematically as:
 
-<div style="text-align: center;">
-$$\hat{f}(X) = \sum_{m=1}^{M} c_m \cdot I\{(X_1, X_2) \in R_m\}$$.
-</div>
+
+$$\hat{f}(X) = \sum_{m=1}^{M} c_m \cdot I\{(X_1, X_2) \in R_m\}$$
+
 
 where $I$ is an indicator function that equals 1 if the condition is true and 0 otherwise.
 
