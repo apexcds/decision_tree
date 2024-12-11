@@ -49,10 +49,36 @@ Regression trees are particularly effective for capturing non-linear relationshi
  
 
 ## Classification Trees
-TBC
 
-## Other Issues
-TBC
+Assume the dataset consists of $p$ inputs and a categorical response for each of $N$ observations, represented as $(x_i, y_i)$ for $i = 1, 2, \dots, N$, where $x_i = (x_{i1}, x_{i2}, \dots, x_{ip})$ and $y_i \in \{1, 2, \dots, K\}$. The goal of a classification tree is to predict the category of $y_i$ by recursively partitioning the input space and assigning a class label to each partition.
+
+The algorithm partitions the input space into $M$ regions $R_1, R_2, \dots, R_M$ and assigns a class label $\hat{y}_m$ to each region. The prediction for an observation $x$ is given by:
+
+$$\hat{y} = \hat{y}_m \quad \text{where } x \in R_m.$$
+
+### Tree Construction
+1. **Splitting Criterion**: At each step, the algorithm selects a splitting variable $x_j$ and a split point $s$ that minimizes the impurity measure in the resulting regions. Common impurity measures include:
+   - **Gini Index**:
+     $$\text{Gini}(R) = \sum_{k=1}^K p_k (1 - p_k),$$
+     where $p_k$ is the proportion of observations in region $R$ belonging to class $k$.
+   - **Entropy**:
+     $$\text{Entropy}(R) = -\sum_{k=1}^K p_k \log(p_k).$$
+   - **Classification Error**:
+     $$\text{Error}(R) = 1 - \max_k(p_k).$$
+
+2. **Assigning Class Labels**: Each region $R_m$ is assigned the majority class label based on the highest proportion of observations in that region:
+   $$\hat{y}_m = \arg\max_k p_k.$$
+
+### Advantages
+- Handles categorical responses effectively.
+- Captures non-linear relationships between features and responses.
+
+### Limitations
+- Prone to overfitting without pruning or regularization.
+- Less stable as small changes in the data can lead to different trees.
+
+Classification trees are often improved by ensemble methods like Random Forests and Gradient Boosting, which enhance their accuracy and robustness.
+
 
 ## Application
 
