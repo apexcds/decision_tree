@@ -25,6 +25,29 @@ One of the key advantages of recursive binary trees lies in their interpretabili
 
 ## Regression Trees
 
+Assume the dataset consists of $p$ inputs and a response for each of $N$ observations, represented as $(x_i, y_i)$ for $i = 1, 2, \dots, N$, where $x_i = (x_{i1}, x_{i2}, \dots, x_{ip})$. The goal of a regression tree is to predict the response $y_i$ by recursively partitioning the input space and fitting a constant value within each partition.
+
+The algorithm partitions the input space into $M$ non-overlapping regions $R_1, R_2, \dots, R_M$ and models the response in each region as a constant $c_m$. The prediction for an observation $x$ is given by:
+$$
+\hat{y} = \sum_{m=1}^M c_m \cdot \mathbb{I}(x \in R_m),
+$$
+where $\mathbb{I}(\cdot)$ is the indicator function, which is $1$ if $x \in R_m$ and $0$ otherwise.
+
+To construct the tree:
+1. **Splitting Criterion**: At each step, the algorithm selects a splitting variable $x_j$ and a split point $s$ that minimizes the total sum of squared residuals (SSR) within the resulting regions:
+   $$
+   \text{SSR} = \sum_{m=1}^M \sum_{x_i \in R_m} (y_i - c_m)^2.
+   $$
+2. **Optimal Constant**: The constant $c_m$ for each region $R_m$ is the mean of the response values in that region:
+   $$
+   c_m = \frac{1}{|R_m|} \sum_{x_i \in R_m} y_i.
+   $$
+
+The recursive splitting process continues until a stopping criterion is met, such as a minimum number of observations in a region or a maximum tree depth.
+
+Regression trees are particularly effective for capturing non-linear relationships in the data but may require pruning or ensemble techniques like Random Forests to mitigate overfitting.
+
+ 
 
 ## Classification Trees
 TBC
